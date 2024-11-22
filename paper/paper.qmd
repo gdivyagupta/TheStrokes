@@ -66,6 +66,7 @@ Three variables were analyzed during this study—popularity, explicitness, and 
 
 In the top 50 most popular tracks, it was found that 28% of them are explicit. **Figure 1** illustrates the distribution of tracks by popularity along with their status as explicit or non-explicit. It can be seen that there is no strong correlation indicating that explicitness is a predictor for song popularity. Extremely popular songs such as *“Reptilia”* have no explicit lyrics, whereas other songs such as *“12:51”* and *“Ode to the Mets”* contain explicit lyrics and still chart very highly.
 
+```{r}
 # Select relevant columns: name, popularity, explicit
 strokes_data <- strokes_track_details %>%
   select(name, popularity, explicit)
@@ -96,6 +97,7 @@ ggplot(top_tracks, aes(x = reorder(name, -popularity), y = popularity, fill = ex
     fill = "Explicit"
   ) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
 
 ::: {#fig-explicitness}
 ![Distribution of Popularity Across Explicit and Non-Explicit Tracks](path/to/figure1.png)
@@ -105,6 +107,7 @@ ggplot(top_tracks, aes(x = reorder(name, -popularity), y = popularity, fill = ex
 
 **Figure 2** shows a scatterplot of track duration versus track popularity to determine if the length of the track has an influence on how popular it is, i.e., how much the users engage with it. There is a slight positive correlation between longer tracks and track popularity, illustrating that longer tracks are overall favored by listeners of The Strokes. The red line highlights the best-fit relationship between these two metrics and shows an upward trend as the length of the track increases.
 
+```{r}
 ggplot(strokes_track_details, aes(x = duration_ms / 1000, y = popularity)) +
   geom_point(alpha = 0.6) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
@@ -118,6 +121,7 @@ ggplot(strokes_track_details, aes(x = duration_ms / 1000, y = popularity)) +
 ::: {#fig-duration}
 ![Duration vs. Popularity of Tracks](path/to/figure2.png)
 :::
+```
 
 # 4. Discussion
 
