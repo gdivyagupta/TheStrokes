@@ -100,7 +100,7 @@ ggplot(top_tracks, aes(x = reorder(name, -popularity), y = popularity, fill = ex
 ```
 
 ::: {#fig-explicitness}
-![Distribution of Popularity Across Explicit and Non-Explicit Tracks](path/to/figure1.png)
+![Distribution of Popularity Across Explicit and Non-Explicit Tracks](other/sketches/figure1.png)
 :::
 
 ## 3.2 Duration and Popularity
@@ -119,7 +119,7 @@ ggplot(strokes_track_details, aes(x = duration_ms / 1000, y = popularity)) +
   theme_minimal()
 
 ::: {#fig-duration}
-![Duration vs. Popularity of Tracks](path/to/figure2.png)
+![Duration vs. Popularity of Tracks](other/sketches/figure2.png)
 :::
 ```
 
